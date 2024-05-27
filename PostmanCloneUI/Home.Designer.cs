@@ -36,9 +36,9 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1284, 781);
             Font = new Font("Segoe UI", 18F);
-            Margin = new Padding(6, 6, 6, 6);
+            Margin = new Padding(6);
             Name = "Home";
-            Text = "Postman Clone App";
+            Text = "Postman Clone App by Rodel";
             ResumeLayout(false);
         }
 
