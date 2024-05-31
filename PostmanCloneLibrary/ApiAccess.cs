@@ -2,18 +2,19 @@
 
 namespace PostmanCloneLibrary;
 
-public class ApiAccess
+public class ApiAccess : IApiAccess
 {
     private readonly HttpClient client = new();
 
     public async Task<string> CallApiAsync(
         string url
         , bool formatOutput = true
+        , HttpAction action = HttpAction.GET
     )
     {
         var response = await client.GetAsync(url);
 
-        if (response != null)
+        if (response.IsSuccessStatusCode)
         {
             string json = await response.Content.ReadAsStringAsync();
 
@@ -32,4 +33,15 @@ public class ApiAccess
         }
 
     }
+
+    public bool IsValidUrl(string url)
+    {
+        if (string.IsNullOrWhiteSpace(url)) return false;
+
+        bool output = Uri.TryCreate(url, UriKind.Absolute, out Uri uriOutput) &&
+            (uriOutput.Scheme == Uri.UriSchemeHttps);
+
+        return output;
+    }
+
 }

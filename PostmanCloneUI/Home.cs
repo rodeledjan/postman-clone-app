@@ -4,7 +4,7 @@ namespace PostmanCloneUI
 {
     public partial class Home : Form
     {
-        private readonly ApiAccess apiAccess = new();
+        private readonly IApiAccess apiAccess = new ApiAccess();
         public Home()
         {
             InitializeComponent();
@@ -12,6 +12,18 @@ namespace PostmanCloneUI
 
         private async void callAPI_Click(object sender, EventArgs e)
         {
+            systemStatus.Text = "";
+            resultsText.Text = "";
+
+            //validate the api url: https://jsonplaceholder.typicode.com/todos
+
+            if (apiAccess.IsValidUrl(apiText.Text) == false)
+            {
+                systemStatus.Text = "Invalid URL";
+
+                return;
+            }
+
             try
             {
                 systemStatus.Text = "Calling API...";
