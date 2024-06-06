@@ -1,7 +1,7 @@
 ﻿using System.Text.Json;
 
 namespace PostmanCloneLibrary;
-
+                            
 public class ApiAccess : IApiAccess
 {
     private readonly HttpClient client = new();
@@ -20,7 +20,6 @@ public class ApiAccess : IApiAccess
 
             if (formatOutput)
             {
-
                 var jsonElement = JsonSerializer.Deserialize<JsonElement>(json);
                 json = JsonSerializer.Serialize(jsonElement, new JsonSerializerOptions { WriteIndented = true });
             }
