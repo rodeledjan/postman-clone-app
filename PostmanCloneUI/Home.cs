@@ -8,12 +8,13 @@ namespace PostmanCloneUI
         public Home()
         {
             InitializeComponent();
+            httpVerbSelection.SelectedItem = "GET";
         }
 
         private async void callAPI_Click(object sender, EventArgs e)
         {
             systemStatus.Text = "";
-            resultsText.Text = "";
+            resultsTextx.Text = "";
 
             //validate the api url: https://jsonplaceholder.typicode.com/todos
 
@@ -30,14 +31,15 @@ namespace PostmanCloneUI
 
                 //Replace with actual API call later
                 //await Task.Delay(2000);
-                resultsText.Text = await apiAccess.CallApiAsync(apiText.Text);
-
+                resultsTextx.Text = await apiAccess.CallApiAsync(apiText.Text);
+                callData.SelectedTab = resultsTab;
+                resultsTab.Focus();
 
                 systemStatus.Text = "Ready";
             }
             catch (Exception ex)
             {
-                resultsText.Text = "Error: " + ex.Message;
+                resultsTextx.Text = "Error: " + ex.Message;
                 systemStatus.Text = "Error: ";
             }
 
