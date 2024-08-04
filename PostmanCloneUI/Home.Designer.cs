@@ -38,9 +38,9 @@
             httpVerbSelection = new ComboBox();
             callData = new TabControl();
             bodyTab = new TabPage();
-            textBox1 = new TextBox();
+            bodyText = new TextBox();
             resultsTab = new TabPage();
-            resultsTextx = new TextBox();
+            resultsText = new TextBox();
             statusStrip.SuspendLayout();
             callData.SuspendLayout();
             bodyTab.SuspendLayout();
@@ -69,9 +69,9 @@
             urlLabel.AutoSize = true;
             urlLabel.Location = new Point(25, 102);
             urlLabel.Name = "urlLabel";
-            urlLabel.Size = new Size(60, 32);
+            urlLabel.Size = new Size(53, 32);
             urlLabel.TabIndex = 2;
-            urlLabel.Text = "URL:";
+            urlLabel.Text = "API:";
             // 
             // statusStrip
             // 
@@ -126,52 +126,51 @@
             callData.Location = new Point(25, 183);
             callData.Name = "callData";
             callData.SelectedIndex = 0;
-            callData.Size = new Size(804, 384);
+            callData.Size = new Size(804, 392);
             callData.TabIndex = 8;
             // 
             // bodyTab
             // 
-            bodyTab.Controls.Add(textBox1);
+            bodyTab.Controls.Add(bodyText);
             bodyTab.Location = new Point(4, 41);
             bodyTab.Name = "bodyTab";
             bodyTab.Padding = new Padding(3);
-            bodyTab.Size = new Size(796, 339);
+            bodyTab.Size = new Size(796, 347);
             bodyTab.TabIndex = 0;
             bodyTab.Text = "Body";
             bodyTab.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // bodyText
             // 
-            textBox1.Dock = DockStyle.Fill;
-            textBox1.Location = new Point(3, 3);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.ReadOnly = true;
-            textBox1.ScrollBars = ScrollBars.Both;
-            textBox1.Size = new Size(790, 333);
-            textBox1.TabIndex = 6;
+            bodyText.Dock = DockStyle.Fill;
+            bodyText.Location = new Point(3, 3);
+            bodyText.Multiline = true;
+            bodyText.Name = "bodyText";
+            bodyText.ScrollBars = ScrollBars.Both;
+            bodyText.Size = new Size(790, 341);
+            bodyText.TabIndex = 6;
             // 
             // resultsTab
             // 
-            resultsTab.Controls.Add(resultsTextx);
+            resultsTab.Controls.Add(resultsText);
             resultsTab.Location = new Point(4, 24);
             resultsTab.Name = "resultsTab";
             resultsTab.Padding = new Padding(3);
-            resultsTab.Size = new Size(796, 356);
+            resultsTab.Size = new Size(796, 364);
             resultsTab.TabIndex = 1;
             resultsTab.Text = "Results";
             resultsTab.UseVisualStyleBackColor = true;
             // 
-            // resultsTextx
+            // resultsText
             // 
-            resultsTextx.Dock = DockStyle.Fill;
-            resultsTextx.Location = new Point(3, 3);
-            resultsTextx.Multiline = true;
-            resultsTextx.Name = "resultsTextx";
-            resultsTextx.ReadOnly = true;
-            resultsTextx.ScrollBars = ScrollBars.Both;
-            resultsTextx.Size = new Size(790, 350);
-            resultsTextx.TabIndex = 5;
+            resultsText.Dock = DockStyle.Fill;
+            resultsText.Location = new Point(3, 3);
+            resultsText.Multiline = true;
+            resultsText.Name = "resultsText";
+            resultsText.ReadOnly = true;
+            resultsText.ScrollBars = ScrollBars.Both;
+            resultsText.Size = new Size(790, 358);
+            resultsText.TabIndex = 5;
             // 
             // Home
             // 
@@ -215,7 +214,7 @@
         private TabControl callData;
         private TabPage bodyTab;
         private TabPage resultsTab;
-        private TextBox textBox1;
-        private TextBox resultsTextx;
+        private TextBox bodyText;
+        private TextBox resultsText;
     }
 }

@@ -14,15 +14,20 @@ namespace PostmanCloneUI
         private async void callAPI_Click(object sender, EventArgs e)
         {
             systemStatus.Text = "";
-            resultsTextx.Text = "";
+            resultsText.Text = "";
 
             //validate the api url: https://jsonplaceholder.typicode.com/todos
-
             if (apiAccess.IsValidUrl(apiText.Text) == false)
             {
                 systemStatus.Text = "Invalid URL";
-
                 return;
+            }
+
+            HttpAction action;
+
+            if (Enum.TryParse(httpVerbSelection.SelectedItem!.ToString(), out action) == false)
+            {
+                systemStatus.Text = "Invalid HTTP Verb";
             }
 
             try
@@ -31,7 +36,7 @@ namespace PostmanCloneUI
 
                 //Replace with actual API call later
                 //await Task.Delay(2000);
-                resultsTextx.Text = await apiAccess.CallApiAsync(apiText.Text);
+                resultsText.Text = await apiAccess.CallApiAsync(apiText.Text, bodyText.Text, action);
                 callData.SelectedTab = resultsTab;
                 resultsTab.Focus();
 
@@ -39,9 +44,14 @@ namespace PostmanCloneUI
             }
             catch (Exception ex)
             {
-                resultsTextx.Text = "Error: " + ex.Message;
+                resultsText.Text = "Error: " + ex.Message;
                 systemStatus.Text = "Error: ";
             }
+
+        }
+
+        private void resultsText_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }
