@@ -1,5 +1,5 @@
 # PostmanCloneApp
-The Postman Clone application is a user-friendly windows application for making GET requests to APIs and let's you view the response back in JSON format. This can help developoers test API calls in a simplified manner.
+The Postman Clone application is a user-friendly windows application for making GET and POST requests to APIs and let's you view the response back in JSON format. This can help developoers test API calls in a simplified manner.
 
 ##Technlogies Used
 * C#
@@ -15,7 +15,7 @@ The Postman Clone application is a user-friendly windows application for making 
 <img src="Images/SuccessfulTest.PNG" alt="Postman Clone App successful call" title="Successful call" width=50% height=50%>
 
 ## Upcoming changes. 
-* Adding POST, PUT, PATCH, and DELETE functionality
+* Adding PUT, PATCH, and DELETE functionality
 * Adding API heaers
 * Handling API Authentication
 * Adding Dependency Injection
